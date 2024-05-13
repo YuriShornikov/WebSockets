@@ -1,1 +1,1 @@
-![CI](https://github.com/YuriShornikov/WebSockets_main/actions/workflows/web.yml/badge.svg)
+![CI](https://github.com/YuriShornikov/WebSockets/actions/workflows/web.yml/badge.svg)
