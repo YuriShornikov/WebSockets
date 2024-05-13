@@ -1,7 +1,7 @@
 const WebSocket = require('ws');
 
 // Создаем новый WebSocket-сервер на порту 8080
-const wss = new WebSocket.Server({ port: 2020 });
+const wss = new WebSocket.Server({ port: 5050 });
 
 // Хранилище для отслеживания имен пользователей
 // const users = {};

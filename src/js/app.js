@@ -1,10 +1,9 @@
-const socket = new WebSocket('ws://localhost:2020');
+const socket = new WebSocket('ws://localhost:5050');
 
 const auth = document.querySelector('.auth');
 const block = document.querySelector('.block');
 const login = document.getElementById('login');
 const contact = document.querySelector('.contact');
-const inputLog = document.querySelector('.inp.log');
 const inputMes = document.querySelector('.inp.mes');
 const message = document.querySelector('.message');
 const btnLog = document.querySelector('.btn.log');
@@ -13,7 +12,7 @@ let username = '';
 
 let contactList = [];
 
-socket.onopen = function(event) {
+socket.onopen = function() {
   console.log('Соединение установлено');
   
   // Запрос на получение списка текущих участников чата
@@ -92,16 +91,16 @@ socket.onmessage = function(event) {
   }
 };
 
-socket.onclose = function(event) {
+socket.onclose = function() {
   console.log('Соединение закрыто');
 };
 
-window.addEventListener('unload', function(event) {
+window.addEventListener('unload', function() {
   socket.send(JSON.stringify({ type: 'disconnect', value: username }));
   socket.close();
 });
 
-window.addEventListener('beforeunload', function(event) {
+window.addEventListener('beforeunload', function() {
   socket.send(JSON.stringify({ type: 'disconnect', value: username }));
   socket.close();
 });
